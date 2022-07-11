@@ -26,43 +26,30 @@
       <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
       <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
       
-      <div class="form__spinner">
-        <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
-        <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+      <div class="form-group">
+        <label for="comment-form-message"><h2>{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }}<small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
+           <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message"></textarea>
+           <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+        </label>
       </div>
-      
-      <fieldset>
-       <div class="form-group">
-         <label for="comment-form-message"><h2>{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }}<small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
-            <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message"></textarea>
-            <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+
+      <div class="form-group">
+         <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }}
+           <input name="fields[name]" type="text" id="comment-form-name" placeholder="Your name"/>
          </label>
        </div>
-      </fieldset>
 
-      <fieldset>
-        <div class="form-group">
-          <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }}
-            <input name="fields[name]" type="text" id="comment-form-name" placeholder="Your name"/>
-          </label>
-        </div>
-      </fieldset>
+       <div class="form-group">
+         <label for="comment-form-email">E-mail
+           <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)"/>
+         </label>
+       </div>
 
-      <fieldset>
-        <div class="form-group">
-          <label for="comment-form-email">E-mail
-            <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)"/>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div class="form-group">
-          <label for="comment-form-reply">
-            <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email">
-          </label>
-        </div>
-      </fieldset>
+      <div class="form-group">
+        <label for="comment-form-reply">
+          <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email">
+        </label>
+      </div>
       
       <!-- Start comment form alert messaging -->
       <p class="hidden js-notice">
@@ -70,14 +57,13 @@
       </p>
       <!-- End comment form alert messaging -->   
       
-      <fieldset>
-        <!--div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}" data-theme="dark"></div-->
-        <div id="reCaptcha"></div>
-      </fieldset>
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>
+      </div>
 
-      <fieldset>
-        <input type="submit" id="comment-form-submit" class="btn btn--primary btn--large" value="{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}">
-      </fieldset>
+      <div class="form-group">
+        <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
+      </div>
     </form>
   </div>
 <!-- End new comment form -->
