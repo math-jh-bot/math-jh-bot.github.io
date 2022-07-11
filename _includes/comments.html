@@ -18,8 +18,6 @@
 
   <!-- Start new comment form -->
   <div class="page__comments-form" id="respond">
-    <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
-    <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} {{ site.reCaptcha-siteKey }}<span class="required">*</span></p>
     <form class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
       <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
       <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
@@ -27,7 +25,12 @@
       <input type="hidden" name="options[slug]" value="{{ post_slug }}">
       <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
       <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
-
+      
+      <div class="form__spinner">
+        <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+      </div>
+      
       <fieldset>
        <div class="form-group">
          <label for="comment-form-message"><h2>{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }}<small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
@@ -38,7 +41,7 @@
       </fieldset>
 
       <fieldset>
-        <div class="textfield">
+        <div class="form-group">
           <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }}
             <input name="fields[name]" type="text" id="comment-form-name" placeholder="Your name"/>
           </label>
@@ -46,7 +49,7 @@
       </fieldset>
 
       <fieldset>
-        <div class="textfield">
+        <div class="form-group">
           <label for="comment-form-email">E-mail
             <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)"/>
           </label>
@@ -54,13 +57,19 @@
       </fieldset>
 
       <fieldset>
-        <div class="notify-me">
+        <div class="form-group">
           <label for="comment-form-reply">
             <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email">
           </label>
         </div>
       </fieldset>
-    
+      
+      <!-- Start comment form alert messaging -->
+      <p class="hidden js-notice">
+        <strong class="js-notice-text"></strong>
+      </p>
+      <!-- End comment form alert messaging -->   
+      
       <fieldset>
         <!--div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}" data-theme="dark"></div-->
         <div id="reCaptcha"></div>
