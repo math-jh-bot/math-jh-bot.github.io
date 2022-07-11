@@ -20,7 +20,7 @@
   <div class="page__comments-form" id="respond">
     <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
     <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} {{ site.reCaptcha-siteKey }}<span class="required">*</span></p>
-    <form class="js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
+    <form class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
   <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
   <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
   <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="">
@@ -61,14 +61,6 @@
     </div>
   </fieldset>
 
-    <fieldset>
-    <div class="textfield">
-      <label for="hp">
-        <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank">
-      </label>
-    </div>
-  </fieldset>
-
   <fieldset>
     <!--div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}" data-theme="dark"></div-->
     <div id="reCaptcha"></div>
@@ -81,13 +73,6 @@
   </fieldset>
 
 </form>
-
-<br>
-<small>
-<p>Comments are held for moderation. There will be a delay before they appear.<br>
-Comments may include <a href="https://commonmark.org/help/" rel="nofollow"><strong>Markdown</strong></a>.<br>
-To share something privately: <a href="mailto:willy@spinningnumbers.org">Contact me</a>.</p>
-</small>
 
 <script>
 function showReCaptcha() {
