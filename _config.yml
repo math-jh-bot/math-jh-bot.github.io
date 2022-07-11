@@ -57,8 +57,8 @@ comments:
     branch               : "master" # "master"
     endpoint             : "https://test-staticman.herokuapp.com/v2/entry/" # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
-  siteKey                : "6LdKFd0gAAAAANymGyteIa6mK3vawDQjUH0mpe8u"
-  secret                 : "c3x5/YZ4DOKJvCwPShKE1MhR19e9Tg5h5Yc/ARVrMD1ucBcSsN1TDbIH1NWzUtktRrGr0uaULC0kIePeEGQY71JtiIfK1AYpvlzcT7jLwLdigI421rgxQXjIch1t9Gk6QJOZlJJS51CW6kEZpAjQwVZEe0U0OceMT+g1YB9hAYTnHEg4pdfrcxGdPkXlI4Pf3nt2VyXrpJFHp+nMUmxRRZKYCM84RRwOFq3UHmpC9w2D8n5mXaG1LUu5cJsh6CYquub6w00wEn9vKAJeFkZBXPQ59YUEy9ZQtd3h0g8mXpCzlcqoU7uoIkPwDcCnQYL+teBrsG5Hs7r3Mep2tuqOpo141GOnC4ntvhWNjDOQIQg8dX7yvW0u5dER1rDqmjuN2vI8VimlzE+fW2ImLKkjVa60Yli3h5J6yAcXNbSy4bz544LU2U2lpfm/ws6d3kmkNeHz8b0XDQ4CyEYLCkfwE/qEnjlkwZ3tF0pv4ona7teg8nT/5tAn2gfnuAFTES7YTLLhwls7qXFI661al2O1Pphz+479vLv2zwoABeAVbmfI8cEMn95HrtMPAIQvFkEQMXx+25SkovrstyU+H5m65OydTysTdqIkZ75dTtZWZDWG+ywG1vNgLkJBkkAr6ga0olBIi8Qhnq7/6r+2VzNtO8ZXIjRR2byf49aDvSEEnS4="
+  siteKey                : "6Lc63N4gAAAAAGmYOXVGI7UgMtRYjON0rCVmqo1n"
+  secret                 : "A91Y/p+nsbNQ5ZOs5C36bpcuHCrZMtWXKNWG1MTZTNbVMWpzxa7sEiwS1i2vsvS0K/7AtV9OXS/fGkps7s4ZdJiQRqo118f7ILIZUj67fxT+EuZuM7hJaAT9x3UIeRvKrJDeN0L86ItHXfa52VVXH4DmiX3NkVCuv3z+tgMzJqbxvHMhjAMyifeckm3kLWkuUO2GUV1Pi4OTm2aJlWtHnYw0J+2/BmP4im4rxq2C2h+jE6v5ZD18xrwY6zDVAocb2qCFoKeVK6j3eY+XPRfr4IFS8flgCh7yzJIIzqDfkPUY7maJMkbD7R2KOgi0T8V/O622pY3BsUBYk3Fqna1kAGPGxuQ+6u7aGu6MVB4r9uDkxcZ+hODOjlILh1FFbgLWyd+tWs2XDNgFOFwsDGdZJvfbwh01w60+X1Mllo9lbF39UPCu658joU3Cpw9TvtTaStWUPu+rSUxga5z5ccYu2vrHPl0IqLDapukSi7P1KWhcLgRObI8WkquwgFGjvMOoXNmAwV/nufkAYHXdpy8U9Yyb+Qmsz8XUuO5pntlsINqdZ2kizJpfS6EEDy59Ro0sSjTPF4anRUbq43pYRk/oGVGIv6iNtqNMn6/0KPXaVhsDACvOPQ5IxN3/wm22+uQU5Y10QZEA7hbGY55tYq4zFV5DciiAu67euQoRAT9NIvM="
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
