@@ -23,7 +23,7 @@ comments:
   #
   # Name of the branch being used. Must match the one sent in the URL of the
   # request.
-  branch: "master"
+  branch: "main"
 
   commitMessage: "New comment by {fields.name}"
 
@@ -101,4 +101,4 @@ comments:
     siteKey: "6LdKFd0gAAAAANymGyteIa6mK3vawDQjUH0mpe8u"
     # Encrypt reCaptcha secret key using Staticman /encrypt endpoint
     # For more information, https://staticman.net/docs/encryption
-    secret: "DleqiY666ckrSirKuJ9aIgXX0JB2GKeYX2p73JOPc2D7ipYTgJZvLy02CHde8lrVTHrUaaoh0BkbS2Jjx1jBUXx4v0aRdJOneQ/TIESkMcowT86dwjYy2BZRiK/VjZCFNAmMp30K1+MB6Wfn9LA93BPhahBdPK4eR4GRFF/Vr2zxfv8hpDEQXixdCKUbrIr+CJN8mtWolYpPup5QV0bGalPDisoRgK4Bp+lUTZLgfA/Xm/WuwxC85+NJZZoBoecrxXKYP8UgoMy+vRgO/0ozcRklYUZ+2EcDR+6E/MobYLAwMHceee25saS4m0mAV3rhkbTEV0ij0VokLQQd7nZ2Vu/Yhzzi5p1FUjU0ddC4XVhGIfOczbt6ukGZ/W067iECj9ujHYx9Mn1D7V0+6QNQx7L6XuxksxnaFxoAdHstxoyEdT3bHMGGBm8RrqNv1vdgcms4kkasnWmh9jaL8RWGKr4zFXVcS90URkTWPaOWciAIyJ/tobtx7PwrVgu/d8T2vggX8Fk8U7194DdneAt5a+lR2REpAd5Rs6Y3MpAP4xvLYDurXxm3Grhn/kg5sKGbRnWltD8ZJsFAG13LaLEcZ/yaUKBeq2bTszCp+70r5VxJTrd59I+qG3KOAxOthmfxpEjcRFgQwxGCWQEE6BzlfRQUCuVEpfZWE38V8pdEKcM="
+    secret: "UkVnsOINj2OR5oNOUsIeEahxm/c45iRBp+dorGYzVh0GBlfJcReZTlYvL0eSjiIrGCatcU2XkbZBc27LNJ5Pxj26nUIk1BIySEaPOm7pNEXi9q6Y2MjEewpLiN1YtTbFWIM4FKDNh/g+EQUBTtVGcU6869BY22f2Dl9rJzULtLuQ6wG4YCoqnVsYgToGR4C4Fkf13W0DlCQf0nDSbgKI7H1L6E32VWZnAMdTMjpoCrOpD4RbNCB0GC3U41mxmXKoUa3MaHEPhu/Ux39j8y7oVX+LM6884c8OWiyDNLtBYXqj8JZb3J/A66NMarcEbWCP7tVpkDDyQ93HbjgL4RE73S3eXrpJjnQMluUXiF9poO/3A/MEhyysgR/qXxZBhr7rd7g3sAIMCNhtYUffbQ1DhrsC8XPPWh5skU2ll53/XMQPjqNjMElzZSJxlJKOZozSxiFLTq4ksO1ZOFJRCAJXLPaXdcE7cXMeA4vrYUyx8vZU3nFvXEqsOt0jepRu62KWiWfcPhEyaxickjFhR9X+bTjtmleqxOuZnUnrIkLI/T/6HlcVy4q4/uIaCN/nDWu2Tg8iPNPHq/6Lj1Ky9RmCcZqaWxX+aX6NxIvKn1GYpetpPDquTbWcBKtFbFShwSfZW8LUmmiKIbR2jAgDVquuLL6uGYzXZR15K3l8fb2Pml0="
