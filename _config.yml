@@ -12,25 +12,28 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "custom" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+dark_mode                : true
+dark_theme               : "custom-dark"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Site Title"
+locale                   : "ko-KR"
+title                    : "수학쟁이의 낙서장"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Junhyeok Kim"
+description              : "수학쟁이의 낙서장"
+url                      : "https://math-jh-bot.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "math-jh-bot/math-jh-bot.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "staticman_v2" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -51,11 +54,11 @@ comments:
     reactions_enabled    : # '1' for enabled (default), '0' for disabled
     theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    branch               : "main" # "master"
+    endpoint             : "https://test-staticman.herokuapp.com/v2/entry/" # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey                : "6LdKFd0gAAAAANymGyteIa6mK3vawDQjUH0mpe8u"
+  secret                 : "RHVqOrKL4ypKa2wnxzq5giLR+RTNtev3Zk6KsrdRSPV4qlMY6GO+VgtEHGzhmJd42b2hfQBDq19W2QTWTdsjnDls5F6mm2nxPnaZ0f6z5D4LUAiRqQyCKinM/572tAzkhr+K0EfNr2dq1B0HeE/fQ21w7QT6LjvCDNPG5RvHwHt6gaA/IOQSpo8Rk8FcXuYTORirQE4bJ/iJyOrdmZax01Vfy4sdJ8M3WNR08hcXXQaZwgMsOObzUxPtKLiqsf6TNbrnSwNunVFU1wTs7c9yZ77v/Z4un+olbf5Z6bT1fvMYDDviB+XkLgEg4ZU3MhpM/wlpZLCSi4AfKvqIjeAV3Ws7CJe0QoVIAyqNY1jiTTu1nR6+l4wIM3dgKioQH59laytucJSozLiH8N/5fr6KBGKvLGTRlVZD/I6pI/SHj85noq05+N90pOQoez3n2n1DWELDe4mUbrsXeUwJRXJnRRoFJqr4jL12vmNLtZlkTuiRaosNA5gsTDdkyJiM7hZo4SutUBJzR5KrU4zf/xX50s2lu9f5nf/uCViNMRkI78HwZgwVnZsTMScQglbJHzXHhRGUW/BMHjyU5g4ygv4lWkMyBm4Ob5tyz05Y66TXNKiwNX+1blH4L42ZpP2QSuw680vzPPre/Yo+tXVFfbzT+bqL/uz8RSpUF5q9+DYveeA="
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
@@ -104,11 +107,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "MathHolic"
+  avatar           : /assets/images/Octahedral.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Grad. student in mathematics"
+  location         : "Seoul, Korea"
+  email            : "kujuburi@icloud.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -166,7 +169,7 @@ exclude:
   - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
-  - assets/js/vendor
+  - assets/js/vendor/jquery/jquery-3.6.0.js
   - Capfile
   - CHANGELOG
   - config
@@ -208,7 +211,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
+  math_engine: katex
 
 # Sass/SCSS
 sass:
@@ -220,7 +223,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -287,6 +290,17 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      show_date: true
+      comments: true
       share: true
-      related: true
+      related: false
+      toc: true
+      toc_sticky: true
+      katex: true
+
+head_scripts:   
+  - /assets/js/vendor/jquery-min/jquery-3.6.0.min.js
+  - /assets/js/custom/ColorScheme.js
+  - /assets/js/custom/ColorScheme_Scroll.js
+  - /assets/js/custom/HiddenTopButton.js
+  - /assets/js/custom/Comments.js
