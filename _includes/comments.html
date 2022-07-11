@@ -21,75 +21,73 @@
     <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
     <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} {{ site.reCaptcha-siteKey }}<span class="required">*</span></p>
     <form class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
-  <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
-  <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
-  <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="">
-  <input type="hidden" name="options[slug]" value="{{ post_slug }}">
-  <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
-  <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
+      <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
+      <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+      <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="">
+      <input type="hidden" name="options[slug]" value="{{ post_slug }}">
+      <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
+      <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
 
-  <fieldset>
-  <div class="textfield">
-    <label for="comment-form-message"><h2>Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
-      <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message"></textarea>
-    </label>
+      <fieldset>
+       <div class="form-group">
+         <label for="comment-form-message"><h2>{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }}<small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
+            <textarea class="textfield__input" name="fields[message]" type="text" id="comment-form-message"></textarea>
+            <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+         </label>
+       </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="textfield">
+          <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }}
+            <input name="fields[name]" type="text" id="comment-form-name" placeholder="Your name"/>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="textfield">
+          <label for="comment-form-email">E-mail
+            <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)"/>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="notify-me">
+          <label for="comment-form-reply">
+            <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email">
+          </label>
+        </div>
+      </fieldset>
+    
+      <fieldset>
+        <!--div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}" data-theme="dark"></div-->
+        <div id="reCaptcha"></div>
+      </fieldset>
+
+      <fieldset>
+        <button type="submit" id="comment-form-submit" class="btn btn--primary btn--large">
+          {{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}
+        </button>
+      </fieldset>
+    </form>
   </div>
-  </fieldset>
-
-  <fieldset>
-    <div class="textfield">
-      <label for="comment-form-name">Name
-        <input class="textfield__input" name="fields[name]" type="text" id="comment-form-name" placeholder="Your name"/>
-      </label>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <div class="textfield">
-      <label for="comment-form-email">E-mail
-        <input class="textfield__input" name="fields[email]" type="email" id="comment-form-email" placeholder="Your email (optional, used only to send comments.)"/>
-      </label>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <div class="notify-me">
-      <label for="comment-form-reply">
-        <input type="checkbox" id="comment-form-reply" name="options[subscribe]" value="email">
-      </label>
-      Send me an email when someone comments.
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <!--div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}" data-theme="dark"></div-->
-    <div id="reCaptcha"></div>
-  </fieldset>
-
-  <fieldset>
-    <button class="button" id="comment-form-submit"> <!-- add id for Spinner -->
-      Submit
-    </button>
-  </fieldset>
-
-</form>
+<!-- End new comment form -->
 
 <script>
-function showReCaptcha() {
-  var node = document.createElement("div");
-  node.setAttribute('class', 'g-recaptcha');
-  node.setAttribute('data-sitekey', '{{ site.reCaptcha.siteKey }}');
-  if (window.matchMedia && 
+  function showReCaptcha() {
+    var node = document.createElement("div");
+    node.setAttribute('class', 'g-recaptcha');
+    node.setAttribute('data-sitekey', '{{ site.reCaptcha.siteKey }}');
+    if (window.matchMedia && 
       window.matchMedia('(prefers-color-scheme: dark)').matches) {
       node.setAttribute('data-theme', "dark");
+    }
+    document.getElementById("reCaptcha").appendChild(node);
   }
-  document.getElementById("reCaptcha").appendChild(node);
-}
-showReCaptcha();
+  showReCaptcha();
 </script>
-  </div>
-  <!-- End new comment form -->
-  
   {% if site.reCaptcha.siteKey %}<script async src="https://www.google.com/recaptcha/api.js"></script>{% endif %}
 {% endif %}
 </section>
