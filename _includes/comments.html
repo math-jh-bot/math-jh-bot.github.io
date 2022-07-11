@@ -18,7 +18,7 @@
 
   <!-- Start new comment form -->
   <div class="page__comments-form" id="respond">
-    <form target="_blank" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
+    <form id="new_comment" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments" autocomplete="off">
       <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
       <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
       <input type="hidden" id="comment-replying-to" name="fields[replying_to]" value="">
