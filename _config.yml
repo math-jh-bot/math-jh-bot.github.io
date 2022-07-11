@@ -304,4 +304,3 @@ head_scripts:
   - /assets/js/custom/ColorScheme.js
   - /assets/js/custom/ColorScheme_Scroll.js
   - /assets/js/custom/HiddenTopButton.js
-  - /assets/js/custom/Comments.js
