@@ -67,9 +67,7 @@
       </fieldset>
 
       <fieldset>
-        <button type="submit" id="comment-form-submit" class="btn btn--primary btn--large">
-          {{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}
-        </button>
+        <input type="submit" id="comment-form-submit" class="btn btn--primary btn--large" value="{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}">
       </fieldset>
     </form>
   </div>
